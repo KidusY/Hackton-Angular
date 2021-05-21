@@ -1,0 +1,20 @@
+<div ng-controller="searchCtrl as ctrl">
+	<form class="container mt-5 w-100" ng-submit="search()">
+		<input type="text" class="w-75 mx-auto" ng-model="bookSearched" />
+		<button type="submit">Search</button>
+	</form>
+	<!--Spinner when loading-->
+	<div class="position-relative">
+		<img
+			ng-if="ctrl.Spinner"
+			class="position-absolute top-50 start-50 translate-middle"
+			src="../../assets/1481 (2).gif"
+			alt="spinner"
+			srcset=""
+		/>
+	</div>
+    
+  	<!--Cards for the books-->
+    <results  data='ctrl.SearchedBooks'></results>
+	
+</div>

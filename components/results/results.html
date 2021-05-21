@@ -1,0 +1,24 @@
+<div class="container d-flex justify-content-between flex-wrap mt-5">
+	<div
+		class="card"
+		ng-repeat="book in $ctrl.data track by $index"
+		style="width: 18rem"
+	>
+		<img
+			className="img-fluid"
+			ng-src="{{book.volumeInfo.imageLinks.thumbnail}}"
+			class="card-img-top"
+			alt="{{book.volumeInfo.title}}"
+		/>
+		<div class="card-body">
+			<h5 class="card-title">{{book.volumeInfo.title}}</h5>
+			<p class="card-text">{{book.volumeInfo.description}}</p>
+			<a
+				href="{{book.volumeInfo.infoLink}}"
+				class="btn btn-primary"
+				target="_blank"
+				>Get Book</a
+			>
+		</div>
+	</div>
+</div>
