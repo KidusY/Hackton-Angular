@@ -1,3 +1,22 @@
 body{
     background-color: rgb(204, 170, 106);
 }
+.bookHeadingPic {
+ width: 250px;
+ height: 250px;
+ height: auto;
+
+}
+.bookCard{
+    max-height: 300px;
+    margin: 10px;
+  
+}
+.bookCard P{
+    max-height: 150px;
+    overflow: hidden;
+  
+}
+.card{
+  margin-top: 30px;
+}

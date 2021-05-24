@@ -1,0 +1,39 @@
+<!-- Modal -->
+<div
+	class="modal fade"
+	aria-hidden="true"
+	aria-labelledby="exampleModalToggleLabel"
+	tabindex="-1"
+	id="infoModal"
+>
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalToggleLabel">
+					{{$ctrl.data.volumeInfo.title}}
+				</h5>
+				<button
+					type="button"
+					class="btn-close btn-danger"
+					data-dismiss="modal"
+					aria-label="Close"
+				>
+					X
+				</button>
+			</div>
+			<div class="modal-body d-flex">
+				<div class="w-50">
+					<img
+						className="img-fluid bookHeadingPic"
+						ng-src="{{$ctrl.data.volumeInfo.imageLinks.thumbnail}}"
+						class="card-img-top"
+						alt="{{$ctrl.data.volumeInfo.title}}"
+					/>
+				</div>
+
+				<p  className="w-50 ml-2" >{{$ctrl.data.volumeInfo.description}}</p>
+			</div>
+		
+		</div>
+	</div>
+</div>

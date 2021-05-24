@@ -2,6 +2,7 @@ function bookSearch($scope, $http) {
     const ctrl = this;
     ctrl.SearchedBooks = [];
     ctrl.Spinner = false;
+    ctrl.selectedBook = null;
     //search for books 
     $scope.search = () => {
         $http({
@@ -13,7 +14,15 @@ function bookSearch($scope, $http) {
             }
         }).then(res => {
             ctrl.Spinner = false;
-            ctrl.SearchedBooks = res.data.items;
+            ctrl.SearchedBooks = res.data.items.map((book) => {
+                if (!book.volumeInfo.imageLinks) {
+                    const imageLinks = {
+                        thumbnail: 'https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg'
+                    }
+                    book.volumeInfo = { ...book.volumeInfo, imageLinks }
+                }
+                return book;
+            });
         }).catch(err => {
             console.log(err);
             $scope.Spinner = false;
@@ -24,6 +33,6 @@ bookFinder.controller('searchCtrl', bookSearch);
 bookFinder.component('search', {
     templateUrl: './components/bookSearch/bookSearch.html',
     controller: bookSearch,
-    controllerAs: 'vm'
+    controllerAs: 'ctrl'
 
 });

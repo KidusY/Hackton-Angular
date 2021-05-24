@@ -1,4 +1,4 @@
-<div class="container d-flex justify-content-between flex-wrap mt-5">
+<div class="container d-flex justify-content-between flex-wrap mt-5" ng-controller="resultsCtrl as rCtrl">
 	<div
 		class="card"
 		ng-repeat="book in $ctrl.data track by $index"
@@ -10,15 +10,29 @@
 			class="card-img-top"
 			alt="{{book.volumeInfo.title}}"
 		/>
-		<div class="card-body">
+		<div class="card-body overflow-hidden bookCard">
 			<h5 class="card-title">{{book.volumeInfo.title}}</h5>
-			<p class="card-text">{{book.volumeInfo.description}}</p>
+			<p class="card-text ">{{book.volumeInfo.description}}</p>
 			<a
 				href="{{book.volumeInfo.infoLink}}"
 				class="btn btn-primary"
 				target="_blank"
 				>Get Book</a
 			>
+			<button
+			type="button"
+			class="btn btn-primary"
+			data-toggle="modal"
+			data-target="#infoModal"
+			ng-click="OnBookSelect(book)"
+		>
+			More Info
+		</button>
+		
 		</div>
+		<book-info-modal data="rCtrl.selectedBook"></book-info-modal>
 	</div>
 </div>
+
+
+	

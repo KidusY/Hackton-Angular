@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html ng-app="bookFinder">
+<html lang="en" ng-app="maps">
 	<head>
-		<link
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link
 			rel="stylesheet"
 			href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
 			integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
@@ -19,19 +22,21 @@
 			integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
 			crossorigin="anonymous"
 		></script>
+		<title>Maps</title>
 	</head>
-	<body ng-controller="mainCtrl as vm">
-		<nav-bar></nav-bar>
-		<!--For the router to work-->
-		<ui-view></ui-view>
+	<body>
+<nav-bar></nav-bar>
+		<div
+			id="googleMap"
+			style="width: 100%; height: 90vh"
+			
+		></div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.29/angular-ui-router.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="app.js"></script>
-		<script src="./components/bookSearch/bookSearch.js"></script>
-		<script src="./components/nav/nav.js"></script>
-		<script src="/components/results/results.js"></script>
-		<script src="/components/bookInfoModal/bookInfoModal.js"></script>
-		<script src="./components/maps/maps.js"></script>
-
+        <script src="./components/nav/nav.js"></script>
 	</body>
+       	
 </html>
